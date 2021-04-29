@@ -1,0 +1,2 @@
+http --form POST http://localhost:8080/addProduct productName=name productMemo=memo
+http GET http://localhost:8080/fetchAllProducts
