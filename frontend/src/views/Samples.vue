@@ -21,3 +21,10 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style lang="scss">
+div.samples {
+  display: flex;
+  flex-direction: column;
+}
+</style>

@@ -1,27 +1,29 @@
 <template>
-  <v-dialog
-    transition="dialog-bottom-transition"
-    max-width="600"
-    v-model="dialog"
-  >
-    <template v-slot:activator="{ on, attrs }">
-      <v-btn elevation="2" rounded color="primary" v-bind="attrs" v-on="on">
-        Button
-      </v-btn>
-    </template>
-    <v-card>
-      <v-card-title class="headline grey lighten-2"> title </v-card-title>
+  <div class="text-center ma-2">
+    <v-dialog
+      transition="dialog-bottom-transition"
+      max-width="600"
+      v-model="dialog"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn elevation="2" rounded color="primary" v-bind="attrs" v-on="on">
+          Button
+        </v-btn>
+      </template>
+      <v-card>
+        <v-card-title class="headline grey lighten-2"> title </v-card-title>
 
-      <v-card-text> sample card contents </v-card-text>
+        <v-card-text> sample card contents </v-card-text>
 
-      <v-divider></v-divider>
+        <v-divider></v-divider>
 
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn color="primary" text @click="dialog = false"> OK </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" text @click="dialog = false"> OK </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
 </template>
 
 <script lang="ts">
