@@ -2,11 +2,11 @@
   <v-app>
     <v-app-bar height="50" :fixed="true">
       <div style="font-weight: bold; font-size: 20px">yoooz</div>
-      <div class="links">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link> |
-        <router-link to="/samples">Samples</router-link>
-      </div>
+      <v-tabs :right="true">
+        <v-tab><router-link to="/">Home</router-link></v-tab>
+        <v-tab><router-link to="/about">About</router-link></v-tab>
+        <v-tab><router-link to="/samples">Samples</router-link></v-tab>
+      </v-tabs>
     </v-app-bar>
     <v-container>
       <router-view />
