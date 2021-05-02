@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <v-app-bar height="50" fixed="true">
-      yoooz
+    <v-app-bar height="50" :fixed="true">
+      <div style="font-weight: bold; font-size: 20px">yoooz</div>
       <div class="links">
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link>
@@ -13,7 +13,7 @@
   </v-app>
 </template>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,10 +24,6 @@
 
 header.v-toolbar div.v-toolbar__content {
   justify-content: space-between;
-  div.links {
-    right: 0;
-  }
-
   a {
     font-weight: bold;
     color: #2c3e50;
