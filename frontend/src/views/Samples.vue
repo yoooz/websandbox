@@ -5,16 +5,13 @@
       <div class="fruits-list">
         <v-list>
           <v-list-item v-for="(item, index) in fruits" :key="index">
-            <v-list-item-title>{{ item.name }}</v-list-item-title>
+            <v-btn @click="change(item.comp)">{{ item.name }}</v-btn>
           </v-list-item>
         </v-list>
       </div>
 
-      <div class="buttons">
-        <MyDialog></MyDialog>
-        <MyBottomSheet></MyBottomSheet>
-        <MySnackbar></MySnackbar>
-        <MyDropdown></MyDropdown>
+      <div class="contents">
+        <component :is="currentView"></component>
       </div>
     </div>
   </div>
@@ -22,27 +19,33 @@
 
 <script lang="ts">
 import Vue from "vue";
-import MyDialog from "@/components/MyDialog.vue";
-import MyBottomSheet from "@/components/MyBottomSheet.vue";
-import MySnackbar from "@/components/MySnackbar.vue";
-import MyDropdown from "@/components/MyDropdown.vue";
+import MyDataTable from "@/components/MyDataTable.vue";
+import MyTimeline from "@/components/MyTimeline.vue";
 
 export default Vue.extend({
   components: {
-    MyDialog,
-    MyBottomSheet,
-    MySnackbar,
-    MyDropdown,
+    MyDataTable,
+    MyTimeline,
   },
   data: () => ({
     fruits: [
-      { name: "Apple" },
-      { name: "Orange" },
-      { name: "Grape" },
-      { name: "Cherry" },
-      { name: "Blueberry" },
+      {
+        name: "MyTimeline",
+        comp: "myTimeline",
+      },
+      {
+        name: "MyDataTable",
+        comp: "myDataTable",
+      },
     ],
+    currentView: "myDataTable",
   }),
+  methods: {
+    change: function (title: string) {
+      console.log(title);
+      this.currentView = title;
+    },
+  },
 });
 </script>
 
@@ -60,7 +63,8 @@ div.fruits-list {
   display: inline-block;
 }
 
-div.buttons {
+div.contents {
+  border: solid;
   flex-grow: 2;
   display: inline-block;
 }
