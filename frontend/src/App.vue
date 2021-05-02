@@ -4,7 +4,8 @@
       <div style="font-weight: bold; font-size: 20px">yoooz</div>
       <div class="links">
         <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">About</router-link> |
+        <router-link to="/samples">Samples</router-link>
       </div>
     </v-app-bar>
     <v-container>
