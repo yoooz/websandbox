@@ -31,12 +31,14 @@ import Vue from "vue";
 import MyDataTable from "@/components/MyDataTable.vue";
 import MyTimeline from "@/components/MyTimeline.vue";
 import MyTree from "@/components/MyTree.vue";
+import MySparkline from "@/components/MySparkline.vue";
 
 export default Vue.extend({
   components: {
     MyDataTable,
     MyTimeline,
     MyTree,
+    MySparkline,
   },
   data: () => ({
     comps: [
@@ -51,6 +53,10 @@ export default Vue.extend({
       {
         name: "MyTree",
         comp: "myTree",
+      },
+      {
+        name: "MySparkline",
+        comp: "mySparkline",
       },
     ],
     currentView: "myTimeline",
