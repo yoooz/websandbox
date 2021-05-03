@@ -11,7 +11,9 @@
       </div>
 
       <div class="contents">
-        <component :is="currentView"></component>
+        <v-card elevation="2">
+          <component :is="currentView"></component>
+        </v-card>
       </div>
     </div>
   </div>
@@ -64,7 +66,6 @@ div.fruits-list {
 }
 
 div.contents {
-  border: solid;
   flex-grow: 2;
   display: inline-block;
 }
