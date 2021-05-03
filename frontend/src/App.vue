@@ -6,6 +6,7 @@
         <v-tab><router-link to="/">Home</router-link></v-tab>
         <v-tab><router-link to="/about">About</router-link></v-tab>
         <v-tab><router-link to="/samples">Samples</router-link></v-tab>
+        <v-tab><router-link to="/forms">Forms</router-link></v-tab>
       </v-tabs>
     </v-app-bar>
     <v-container>
