@@ -1,0 +1,10 @@
+db:
+  image: mysql:latest
+  volumes:
+    - ./initdb.d:/docker-entrypoint-initdb.d
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+  ports:
+    - "4306:3306"
+  security_opt:
+    - seccomp:unconfined

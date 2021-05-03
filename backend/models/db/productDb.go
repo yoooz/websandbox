@@ -9,10 +9,11 @@ import (
 )
 
 func open() *gorm.DB {
-	USER := "root"
-	PROTOCOL := "tcp(localhost:3306)"
-	DBNAME := "Shopping"
-	CONNECT := USER + "@" + PROTOCOL + "/" + DBNAME
+	USER := "shop"
+	PASSWORD := "shop"
+	PROTOCOL := "tcp(127.0.0.1:4306)"
+	DBNAME := "Shop"
+	CONNECT := USER + ":" + PASSWORD + "@" + PROTOCOL + "/" + DBNAME
 	db, err := gorm.Open(mysql.Open(CONNECT), &gorm.Config{})
 
 	if err != nil {
