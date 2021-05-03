@@ -5,7 +5,14 @@
       <div class="comps-list">
         <v-list>
           <v-list-item v-for="(item, index) in comps" :key="index">
-            <v-btn @click="change(item.comp)">{{ item.name }}</v-btn>
+            <v-tooltip left>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn @click="change(item.comp)" v-bind="attrs" v-on="on">{{
+                  item.name
+                }}</v-btn>
+              </template>
+              {{ item.name }}
+            </v-tooltip>
           </v-list-item>
         </v-list>
       </div>
