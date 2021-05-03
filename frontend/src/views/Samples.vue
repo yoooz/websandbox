@@ -2,9 +2,9 @@
   <div class="samples">
     <h1>This is an samples page</h1>
     <div class="sample-container">
-      <div class="fruits-list">
+      <div class="comps-list">
         <v-list>
-          <v-list-item v-for="(item, index) in fruits" :key="index">
+          <v-list-item v-for="(item, index) in comps" :key="index">
             <v-btn @click="change(item.comp)">{{ item.name }}</v-btn>
           </v-list-item>
         </v-list>
@@ -23,14 +23,16 @@
 import Vue from "vue";
 import MyDataTable from "@/components/MyDataTable.vue";
 import MyTimeline from "@/components/MyTimeline.vue";
+import MyTree from "@/components/MyTree.vue";
 
 export default Vue.extend({
   components: {
     MyDataTable,
     MyTimeline,
+    MyTree,
   },
   data: () => ({
-    fruits: [
+    comps: [
       {
         name: "MyTimeline",
         comp: "myTimeline",
@@ -39,8 +41,12 @@ export default Vue.extend({
         name: "MyDataTable",
         comp: "myDataTable",
       },
+      {
+        name: "MyTree",
+        comp: "myTree",
+      },
     ],
-    currentView: "myDataTable",
+    currentView: "myTimeline",
   }),
   methods: {
     change: function (title: string) {
@@ -61,7 +67,7 @@ div.sample-container {
   display: flex;
 }
 
-div.fruits-list {
+div.comps-list {
   display: inline-block;
 }
 
