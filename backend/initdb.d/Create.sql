@@ -1,6 +1,6 @@
-DROP USER IF EXISTS shop;
-CREATE USER shop IDENTIFIED WITH mysql_native_password BY 'shop';
-DROP SCHEMA IF EXISTS Shop;
-CREATE schema Shop;
-/* shopユーザーにShopDBの権限を割り当てる */
-GRANT all ON Shop.* TO shop;
+DROP USER IF EXISTS dev;
+CREATE USER dev IDENTIFIED WITH mysql_native_password BY 'dev';
+DROP SCHEMA IF EXISTS Dev;
+CREATE schema Dev;
+/* devユーザーにDevDBの権限を割り当てる */
+GRANT all ON Dev.* TO dev;

@@ -14,11 +14,14 @@ func main() {
 func serve() {
 	router := gin.Default()
 
-	router.GET("/fetchAllProducts", controller.FetchAllProducts)
-	router.GET("/fetchProduct", controller.FindProduct)
-	router.POST("/addProduct", controller.AddProduct)
-	router.POST("/changeStateProduct", controller.ChangeStateProduct)
-	router.POST("/deleteProduct", controller.DeleteProduct)
+	memo := router.Group("memo")
+	{
+		memo.GET("/fetchAll", controller.FetchAllMemo)
+		memo.GET("/find", controller.FindMemo)
+		memo.POST("/add", controller.AddMemo)
+		memo.POST("/update", controller.UpdateMemo)
+		memo.POST("/delete", controller.DeleteMemo)
+	}
 
 	if err := router.Run(":8080"); err != nil {
 		log.Fatal("Server Run Failed.: ", err)
