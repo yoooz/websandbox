@@ -63,7 +63,6 @@ export default Vue.extend({
   }),
   methods: {
     change: function (title: string) {
-      console.log(title);
       this.currentView = title;
     },
   },
