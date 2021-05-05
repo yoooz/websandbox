@@ -42,7 +42,6 @@ export default Vue.extend({
   }),
   methods: {
     onClickListItem(item: Item) {
-      console.dir(item);
       this.currentId = item.id;
       this.currentContent = item.content;
     },
@@ -64,7 +63,6 @@ export default Vue.extend({
   },
   mounted: function () {
     axios.get("/memo/fetchAll").then((response) => {
-      console.dir(response);
       this.items = response.data;
     });
   },
