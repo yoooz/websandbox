@@ -48,7 +48,7 @@ export default Vue.extend({
     },
     onClickUpdate() {
       const params = new URLSearchParams();
-      params.append("id", this.currentId);
+      params.append("id", this.currentId.toString());
       params.append("content", this.currentContent);
       axios.post("/memo/update", params).then((response) => {
         location.reload();
@@ -56,7 +56,7 @@ export default Vue.extend({
     },
     onClickDelete() {
       const params = new URLSearchParams();
-      params.append("id", this.currentId);
+      params.append("id", this.currentId.toString());
       axios.post("/memo/delete", params).then((response) => {
         location.reload();
       });
