@@ -1,26 +1,19 @@
 <template>
   <div class="forms">
-    <v-btn @click="onClickButton">button</v-btn>
     <FormDialog></FormDialog>
+    <MemoList></MemoList>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import axios from "axios";
 import FormDialog from "@/components/FormDialog.vue";
+import MemoList from "@/components/MemoList.vue";
 
 export default Vue.extend({
   components: {
     FormDialog,
-  },
-  methods: {
-    onClickButton() {
-      console.log("clicked");
-      axios.get("/memo/fetchAll").then(function (response) {
-        console.dir(response);
-      });
-    },
+    MemoList,
   },
 });
 </script>

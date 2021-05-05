@@ -1,12 +1,12 @@
 <template>
-  <div class="text-center ma-2">
+  <div class="text-center ma-2 d-flex">
     <v-dialog
       transition="dialog-bottom-transition"
       max-width="600"
       v-model="dialog"
     >
       <template v-slot:activator="{ on, attrs }">
-        <v-btn elevation="2" rounded color="primary" v-bind="attrs" v-on="on">
+        <v-btn elevation="2" color="primary" v-bind="attrs" v-on="on">
           Create
         </v-btn>
       </template>
@@ -67,6 +67,7 @@ export default Vue.extend({
       axios.post("/memo/add", params).then((response) => {
         console.dir(response);
         this.dialog = false;
+        location.reload();
       });
     },
   },
