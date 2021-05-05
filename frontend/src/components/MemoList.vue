@@ -35,36 +35,43 @@ type Item = {
 };
 
 export default Vue.extend({
-  data: () => ({
-    items: [],
-    currentId: -1,
-    currentContent: "",
-  }),
+  data() {
+    return {
+      items: [],
+      currentId: -1,
+      currentContent: "",
+    };
+  },
   methods: {
-    onClickListItem(item: Item) {
+    onClickListItem(item: Item): void {
       this.currentId = item.id;
       this.currentContent = item.content;
     },
-    onClickUpdate() {
+    onClickUpdate(): void {
       const params = new URLSearchParams();
       params.append("id", this.currentId.toString());
       params.append("content", this.currentContent);
-      axios.post("/memo/update", params).then((response) => {
-        location.reload();
+      axios.post("/memo/update", params).then(() => {
+        this.fetch();
       });
     },
-    onClickDelete() {
+    onClickDelete(): void {
       const params = new URLSearchParams();
       params.append("id", this.currentId.toString());
-      axios.post("/memo/delete", params).then((response) => {
-        location.reload();
+      axios.post("/memo/delete", params).then(() => {
+        this.currentId = -1;
+        this.currentContent = "";
+        this.fetch();
+      });
+    },
+    fetch(): void {
+      axios.get("/memo/fetchAll").then((response) => {
+        this.items = response.data;
       });
     },
   },
   mounted: function () {
-    axios.get("/memo/fetchAll").then((response) => {
-      this.items = response.data;
-    });
+    this.fetch();
   },
 });
 </script>

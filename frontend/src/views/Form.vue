@@ -1,7 +1,7 @@
 <template>
   <div class="forms">
-    <FormDialog></FormDialog>
-    <MemoList></MemoList>
+    <FormDialog @on-added-new-memo="reloadMemos"></FormDialog>
+    <MemoList ref="memoList"></MemoList>
   </div>
 </template>
 
@@ -14,6 +14,12 @@ export default Vue.extend({
   components: {
     FormDialog,
     MemoList,
+  },
+  methods: {
+    reloadMemos() {
+      console.log("clicked");
+      this.$refs.memoList.fetch();
+    },
   },
 });
 </script>

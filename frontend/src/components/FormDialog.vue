@@ -66,7 +66,7 @@ export default Vue.extend({
 
       axios.post("/memo/add", params).then((response) => {
         this.dialog = false;
-        location.reload();
+        this.$emit('on-added-new-memo')
       });
     },
   },
